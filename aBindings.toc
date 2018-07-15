@@ -5,6 +5,8 @@
 ## Notes: Direct macrotext-to-key bindings.
 
 bindings\druid.lua
+bindings\mage.lua
+bindings\rogue.lua
 
 bindings.xml
 main.lua

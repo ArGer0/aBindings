@@ -1,5 +1,5 @@
 
-ABINDINGS_DEBUG = false
+ABINDINGS_DEBUG = true
 
 local function debug(msg, ...)
   if not ABINDINGS_DEBUG then return end
@@ -25,13 +25,14 @@ end
 ebox:SetScript('OnEvent', function()
   local btnidx = 0
   for key, macrotext in next, (aBindings or {}) do
-    debug('Setting up macrotext binding for key %s:\n%s', key, macrotext)
     btnidx = btnidx + 1
     local bname = 'aBindings' .. btnidx
     local btn = CreateFrame('Button', bname)
     btn:SetScript('OnClick', OnClick)
     btn.macrotext = macrotext
-    SetBinding(key, string.upper(btn:GetName()))
+    local macro = string.upper(bname)
+    SetBinding(key, macro)
+    debug('Set up macrotext binding for key %q on button %q to macro %q:\n%s', key, bname, macro, macrotext)
   end
   debug('aBindings loaded. Bindings found: %d', btnidx)
   this:SetScript('OnEvent', nil)
