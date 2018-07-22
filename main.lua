@@ -27,7 +27,7 @@ end
 
 ebox:SetScript('OnEvent', function()
   local btnidx = 0
-  for key, macrotext in next, (aBindings or {}) do
+  for key, macrotext in next, (aBindings.b) do
     btnidx = btnidx + 1
     local bname = 'aBindings' .. btnidx
     local btn = CreateFrame('Button', bname)

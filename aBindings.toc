@@ -4,9 +4,10 @@
 ## Version: 1
 ## Notes: Direct macrotext-to-key bindings.
 
+bindings.xml
+main.lua
+
 bindings\druid.lua
 bindings\mage.lua
 bindings\rogue.lua
 
-bindings.xml
-main.lua
