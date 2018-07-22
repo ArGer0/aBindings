@@ -1,8 +1,11 @@
 
-ABINDINGS_DEBUG = true
+aBindings = {
+  b = {},
+  debug = false,
+}
 
 local function debug(msg, ...)
-  if not ABINDINGS_DEBUG then return end
+  if not aBindings.debug then return end
   DEFAULT_CHAT_FRAME:AddMessage(date('%X aBindings: ') .. string.format(msg, unpack(arg)))
 end
 

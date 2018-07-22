@@ -1,7 +1,7 @@
 local _, enclass = UnitClass('player')
 if enclass ~= 'DRUID' then return end
 
-local b = {}; aBindings = b
+local b = aBindings.b
 
 b['R'] = [[    
     /run if IsAltKeyDown() then return end; for z=1,172 do if IsAttackAction(z)then if not IsCurrentAction(z)then UseAction(z);end;end;end
